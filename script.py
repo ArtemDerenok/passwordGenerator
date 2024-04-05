@@ -8,8 +8,12 @@ window.geometry('300x250')
 
 
 def set_error():
-    result_label['fg'] = 'red'
-    result_label['text'] = ('Введено неверное колличество символов.')
+    quantity_nums = quantity_nums_entry.get()
+    quantity_letters = quantity_letters_entry.get()
+
+    if quantity_nums.isdigit() is not True or quantity_letters.isdigit() is not True:
+        result_label['fg'] = 'red'
+        result_label['text'] = ('Введено неверное колличество символов.')
 
 
 def clear_error():
